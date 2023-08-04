@@ -1,0 +1,27 @@
+{
+  "name": "react-lightningcss",
+  "version": "0.1.95",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "web-vitals": "^3.0.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@types/web": "^0.0.99",
+    "bun-types": "canary",
+    "typescript": "latest",
+    "react-refresh": "0.10.0"
+  },
+  "scripts": {
+    "dev": "bun --watch run dev.tsx"
+  },
+  "module": "index.ts",
+  "type": "module"
+}
