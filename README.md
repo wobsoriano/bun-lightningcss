@@ -48,6 +48,17 @@ export default function App() {
 }
 ```
 
+## TypeScript Shim
+
+Add the following to your .d.ts file:
+
+```ts
+declare module "*.module.css" {
+  const styles: Record<string, string>;
+  export default styles;
+}
+```
+
 ## License
 
 MIT
