@@ -8,7 +8,7 @@ export type LightningcssPluginOptions = Omit<TransformOptions<any>, 'filename' |
 
 export default function lightningcssPlugin(options: LightningcssPluginOptions = {}): import('bun').BunPlugin {
   return {
-    name: 'bun-plugin-lightningcss-modules',
+    name: 'bun-lightningcss',
     setup({ onLoad, onResolve, config }) {
       const defaultOptions: LightningcssPluginOptions = {
         minify: true,
