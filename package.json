@@ -1,6 +1,17 @@
 {
   "name": "bun-plugin-lightningcss-modules",
   "version": "0.0.3",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/wobsoriano/bun-plugin-lightningcss-modules#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/bun-plugin-lightningcss-modules.git"
+  },
+  "bugs": "https://github.com/wobsoriano/bun-plugin-lightningcss-modules/issues",
+  "keywords": [
+    "bun"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -16,11 +27,11 @@
     "lightningcss": "^1.21.5"
   },
   "devDependencies": {
-    "bumpp": "^9.0.0",
     "@antfu/eslint-config": "^0.40.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/web": "^0.0.99",
+    "bumpp": "^9.0.0",
     "bun-plugin-dts": "^0.1.0",
     "bun-types": "^0.7.2",
     "eslint": "^8.46.0",
@@ -30,16 +41,5 @@
     "react-refresh": "0.10.0",
     "typescript": "latest",
     "web-vitals": "^3.0.3"
-  },
-  "keywords": [
-    "bun"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/wobsoriano/bun-plugin-lightningcss-modules#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wobsoriano/bun-plugin-lightningcss-modules.git"
-  },
-  "bugs": "https://github.com/wobsoriano/bun-plugin-lightningcss-modules/issues",
-  "author": "Robert Soriano <sorianorobertc@gmail.com>"
+  }
 }

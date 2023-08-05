@@ -53,9 +53,9 @@ export default function App() {
 Add the following to your .d.ts file:
 
 ```ts
-declare module "*.module.css" {
-  const styles: Record<string, string>;
-  export default styles;
+declare module '*.module.css' {
+  const styles: Record<string, string>
+  export default styles
 }
 ```
 
