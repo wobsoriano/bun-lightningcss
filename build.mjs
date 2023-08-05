@@ -5,6 +5,7 @@ await Bun.build({
   outdir: './dist',
   minify: true,
   plugins: [dts()],
+  sourcemap: 'external',
   target: 'bun',
   external: ['lightningcss', 'browserslist'],
 })
