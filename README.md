@@ -12,7 +12,7 @@ bun install -d bun-plugin-lightningcss-modules
 import lightningcss from 'bun-plugin-lightningcss-modules'
 
 await Bun.build({
-  entrypoints: ['./dev/index.tsx'],
+  entrypoints: ['./index.tsx'],
   outdir: './dist',
   plugins: [lightningcss()],
 })
