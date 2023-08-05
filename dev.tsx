@@ -7,8 +7,8 @@ const PUBLIC_DIR = path.resolve(PROJECT_ROOT, 'dev/public')
 const BUILD_DIR = path.resolve(PROJECT_ROOT, 'dev/dist')
 
 await Bun.build({
-  entrypoints: ['./dev/index.tsx'],
-  outdir: './dist',
+  entrypoints: ['./dev/src/index.tsx'],
+  outdir: './dev/dist',
   plugins: [lightningcssPlugin()],
 })
 
