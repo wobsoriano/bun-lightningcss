@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "bun --watch run dev.tsx"
+    "dev": "bun --watch run dev.tsx",
+    "build": "bun run ./build.mjs"
   },
   "dependencies": {
     "lightningcss": "^1.21.5"
