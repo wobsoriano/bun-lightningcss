@@ -20,6 +20,8 @@ await Bun.build({
 })
 ```
 
+Say you have a `app.module.css` file...
+
 ```css
 .bg-indigo {
   background: indigo;
@@ -31,6 +33,8 @@ await Bun.build({
   color: white;
 }
 ```
+
+Import and enjoy what lightningcss offers!
 
 ```tsx
 import styles from './app.module.css'
