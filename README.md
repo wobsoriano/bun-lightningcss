@@ -1,17 +1,17 @@
-# bun-plugin-lightningcss-modules
+# bun-lightningcss
 
 CSS modules plugin for Bun based on [Lightning CSS](https://lightningcss.dev/) with full support for [class composition](https://lightningcss.dev/css-modules.html#class-composition).
 
 ## Install
 
 ```bash
-bun install -d bun-plugin-lightningcss-modules
+bun install -d bun-lightningcss
 ```
 
 ## Usage
 
 ```ts
-import lightningcss from 'bun-plugin-lightningcss-modules'
+import lightningcss from 'bun-lightningcss'
 
 await Bun.build({
   entrypoints: ['./index.tsx'],
