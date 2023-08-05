@@ -54,7 +54,9 @@ Add the following to your .d.ts file:
 
 ```ts
 declare module '*.module.css' {
-  const styles: Record<string, string>
+  const styles: {
+    readonly [key: string]: string
+  }
   export default styles
 }
 ```
