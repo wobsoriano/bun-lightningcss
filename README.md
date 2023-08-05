@@ -24,6 +24,7 @@ await Bun.build({
 }
 
 .container {
+  /* https://lightningcss.dev/css-modules.html#class-composition */
   composes: bg-indigo;
   color: white;
 }
