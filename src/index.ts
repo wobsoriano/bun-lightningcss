@@ -53,17 +53,9 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
 
       const quote = JSON.stringify
       const escape = (string: string) => quote(string).slice(1, -1)
-      const cache = new Map<string, string>()
 
       if (defaultOptions.cssModules) {
         onLoad({ filter: /\.module\.css$/ }, async ({ path }) => {
-          if (cache.has(path)) {
-            return {
-              contents: cache.get(path)!,
-              loader: 'js',
-            }
-          }
-
           const file = Bun.file(path)
           const rawCssBuffer = await file.arrayBuffer()
 
@@ -123,8 +115,6 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
           const emptyishSourceMap = 'data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIiJdLCJtYXBwaW5ncyI6IkEifQ=='
           contents += `\n//# sourceMappingURL=${emptyishSourceMap}`
 
-          cache.set(path, contents)
-
           return {
             contents,
             loader: 'js',
@@ -133,13 +123,6 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
       }
 
       onLoad({ filter: /^.*\.css(?!\.module\.css)$/ }, async ({ path }) => {
-        if (cache.has(path)) {
-          return {
-            contents: cache.get(path)!,
-            loader: 'js',
-          }
-        }
-
         const file = Bun.file(path)
         const rawCssBuffer = await file.arrayBuffer()
 
@@ -158,8 +141,6 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
 
         export default {}
         `
-
-        cache.set(path, contents)
 
         return {
           contents,
