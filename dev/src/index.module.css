@@ -34,7 +34,7 @@
 }
 
 .appLink {
-  color: #61dafb;
+  composes: text-blue from './other.module.css';
   font-size: 14pt;
 }
 
