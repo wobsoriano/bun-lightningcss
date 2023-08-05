@@ -1,6 +1,6 @@
 # bun-lightningcss
 
-CSS modules plugin for Bun based on [Lightning CSS](https://lightningcss.dev/) with full support for [class composition](https://lightningcss.dev/css-modules.html#class-composition).
+[Lightning CSS](https://lightningcss.dev/) plugin for Bun with full support for [class composition](https://lightningcss.dev/css-modules.html#class-composition).
 
 ## Install
 
