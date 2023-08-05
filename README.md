@@ -1,5 +1,7 @@
 # bun-plugin-lightningcss-modules
 
+[Lightning CSS](https://lightningcss.dev/) plugin for Bun.
+
 ## Install
 
 ```bash
