@@ -1,14 +1,14 @@
 {
-  "name": "lightningcss",
+  "name": "bun-lightningcss",
   "version": "0.0.0",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/wobsoriano/lightningcss#readme",
+  "homepage": "https://github.com/wobsoriano/bun-lightningcss#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/lightningcss.git"
+    "url": "git+https://github.com/wobsoriano/bun-lightningcss.git"
   },
-  "bugs": "https://github.com/wobsoriano/lightningcss/issues",
+  "bugs": "https://github.com/wobsoriano/bun-lightningcss/issues",
   "keywords": [
     "bun"
   ],
