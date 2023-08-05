@@ -1,6 +1,6 @@
 # bun-plugin-lightningcss-modules
 
-[Lightning CSS](https://lightningcss.dev/) plugin for Bun.
+CSS modules plugin for Bun based on [Lightning CSS](https://lightningcss.dev/).
 
 ## Install
 
