@@ -76,6 +76,7 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
         contents += `injectStyle(${quote(code.toString())})\n`;
         contents += `export default {`;
         
+        // Credits to https://github.com/mhsdesign/esbuild-plugin-lightningcss-modules
         for (const [cssClassReadableName, cssClassExport] of Object.entries(exports)) {
           let compiledCssClasses = `"${escape(cssClassExport.name)}`;
         
