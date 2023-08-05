@@ -34,7 +34,7 @@ Say you have a `app.module.css` file...
 }
 ```
 
-Import and enjoy what lightningcss offers!
+Import and use it like so
 
 ```tsx
 import styles from './app.module.css'
