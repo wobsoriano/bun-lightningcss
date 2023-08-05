@@ -6,5 +6,5 @@ await Bun.build({
   minify: true,
   plugins: [dts()],
   target: 'bun',
-  external: ['lightningcss'],
+  external: ['lightningcss', 'browserslist'],
 })

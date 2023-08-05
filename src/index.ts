@@ -1,11 +1,25 @@
+import browserslist from 'browserslist';
 import fs from 'node:fs/promises'
-import { transform } from 'lightningcss'
+import { type TransformOptions, transform, browserslistToTargets } from 'lightningcss'
 import { join } from 'node:path'
 
-export default function lightningcssPlugin(): import('bun').BunPlugin {
+export type LightningcssPluginOptions = Omit<TransformOptions<any>, "filename" | "code"> & {
+  browserslist?: string | readonly string[];
+}
+
+export default function lightningcssPlugin(options: LightningcssPluginOptions = {}): import('bun').BunPlugin {
   return {
     name: 'bun-plugin-lightningcss-modules',
     setup({ onLoad, onResolve, config }) {
+      const defaultOptions: LightningcssPluginOptions = {
+        minify: true,
+        sourceMap: true,
+        cssModules: true,
+        projectRoot: join(process.cwd(), config.outdir || 'dist'),
+      };
+      const { browserslist: browserslistOpts, ...lightningOpts } = options ?? {};
+      const targets = browserslistToTargets(browserslist(browserslistOpts));
+
       onResolve({ filter: /^__style_helper__$/ }, (args) => {
         return {
           path: args.path,
@@ -38,10 +52,9 @@ export default function lightningcssPlugin(): import('bun').BunPlugin {
         const { code, exports = {} } = transform({
           filename: path,
           code: rawCssBuffer,
-          cssModules: {
-            pattern: `[hash]_[local]`
-          },
-          projectRoot: join(process.cwd(), config.outdir || 'dist'),
+          ...defaultOptions,
+          targets,
+          ...lightningOpts,
         });
         
         let contents = '';

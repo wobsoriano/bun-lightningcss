@@ -12,6 +12,7 @@
     "release": "bumpp && npm publish"
   },
   "dependencies": {
+    "browserslist": "^4.21.10",
     "lightningcss": "^1.21.5"
   },
   "devDependencies": {
