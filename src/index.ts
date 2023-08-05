@@ -1,5 +1,4 @@
 import browserslist from 'browserslist';
-import fs from 'node:fs/promises'
 import { type TransformOptions, transform, browserslistToTargets } from 'lightningcss'
 import { join } from 'node:path'
 
@@ -47,11 +46,12 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
       const escape = (string: string) => quote(string).slice(1, -1)
 
       onLoad({ filter: /\.module\.css$/ }, async ({ path }) => {
-        const rawCssBuffer = await fs.readFile(path)
+        const file = Bun.file(path)
+        const rawCssBuffer = await file.arrayBuffer()
 
         const { code, exports = {} } = transform({
           filename: path,
-          code: rawCssBuffer,
+          code: rawCssBuffer as unknown as Buffer,
           ...defaultOptions,
           targets,
           ...lightningOpts,
