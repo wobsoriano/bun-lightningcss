@@ -1,6 +1,6 @@
 {
   "name": "bun-plugin-lightningcss-modules",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/bun-plugin-lightningcss-modules#readme",
