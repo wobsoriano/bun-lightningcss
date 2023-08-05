@@ -31,7 +31,16 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
           contents: `
             export function injectStyle(text) {
               if (typeof document !== 'undefined') {
+                const lightningcssStyleTag = document.getElementById('bun_lightningcss')
+
+                if (lightningcssStyleTag) {
+                  const node = document.createTextNode(text)
+                  lightningcssStyleTag.appendChild(node)
+                  return
+                }
+
                 var style = document.createElement('style')
+                style.id = 'bun_lightningcss'
                 var node = document.createTextNode(text)
                 style.appendChild(node)
                 document.head.appendChild(style)
