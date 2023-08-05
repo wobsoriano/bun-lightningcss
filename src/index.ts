@@ -1,16 +1,17 @@
 import { join } from 'node:path'
 import browserslist from 'browserslist'
-import { type TransformOptions, browserslistToTargets, transform } from 'lightningcss'
+import { browserslistToTargets, transform } from 'lightningcss'
+import type { CustomAtRules, TransformOptions } from 'lightningcss'
 
-export type LightningcssPluginOptions = Omit<TransformOptions<any>, 'filename' | 'code'> & {
+export type LightningcssPluginOptions<C extends CustomAtRules> = Omit<TransformOptions<C>, 'filename' | 'code'> & {
   browserslist?: string | readonly string[]
 }
 
-export default function lightningcssPlugin(options: LightningcssPluginOptions = {}): import('bun').BunPlugin {
+export default function lightningcssPlugin<C extends CustomAtRules>(options: LightningcssPluginOptions<C> = {}): import('bun').BunPlugin {
   return {
     name: 'bun-lightningcss',
     setup({ onLoad, onResolve, config }) {
-      const defaultOptions: LightningcssPluginOptions = {
+      const defaultOptions: LightningcssPluginOptions<C> = {
         minify: true,
         sourceMap: true,
         cssModules: true,
