@@ -31,11 +31,11 @@ export default function lightningcssPlugin(options: LightningcssPluginOptions = 
           contents: `
             export function injectStyle(text) {
               if (typeof document !== 'undefined') {
-                const style = document.getElementById('bun_lightningcss')
+                const styleTag = document.getElementById('bun_lightningcss')
 
-                if (lightningcssStyleTag) {
+                if (styleTag) {
                   const node = document.createTextNode(text)
-                  style.appendChild(node)
+                  styleTag.appendChild(node)
                   return
                 }
 
