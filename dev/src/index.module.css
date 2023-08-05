@@ -1,36 +1,24 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 150px;
+.appLogo {
+  height: 250px;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .appLogo {
     animation: App-logo-spin infinite 5s linear;
   }
 }
 
-.App h3 {
+.app h3 {
   font-size: 2.75rem;
   margin: 0px;
 }
 
-.App-article {
+.appArticle {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -41,7 +29,7 @@ code {
   color: white;
 }
 
-.App-link {
+.appLink {
   color: #61dafb;
   font-size: 14pt;
 }

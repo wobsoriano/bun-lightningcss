@@ -1,27 +1,29 @@
 {
-  "name": "react-lightningcss",
+  "name": "bun-plugin-lightningcss-modules",
+  "type": "module",
   "version": "0.1.95",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "web-vitals": "^3.0.3"
+  "module": "index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "bun --watch run dev.tsx"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+  "dependencies": {
+    "lightningcss": "^1.21.5"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.40.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/web": "^0.0.99",
-    "bun-types": "canary",
+    "bun-plugin-dts": "^0.1.0",
+    "bun-types": "^0.7.2",
+    "eslint": "^8.46.0",
+    "eslint-plugin-import": "^2.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-refresh": "0.10.0",
     "typescript": "latest",
-    "react-refresh": "0.10.0"
-  },
-  "scripts": {
-    "dev": "bun --watch run dev.tsx"
-  },
-  "module": "index.ts",
-  "type": "module"
+    "web-vitals": "^3.0.3"
+  }
 }
