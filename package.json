@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "browserslist": "^4.21.10",
-    "lightningcss": "^1.21.5"
+    "lightningcss": "^1.21.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.0",
