@@ -6,17 +6,6 @@
   text-align: center;
 }
 
-.appLogo {
-  height: 250px;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .appLogo {
-    animation: App-logo-spin infinite 5s linear;
-  }
-}
-
 .app h3 {
   font-size: 2.75rem;
   margin: 0px;
@@ -36,13 +25,4 @@
 .appLink {
   composes: text-blue from './other.module.css';
   font-size: 14pt;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

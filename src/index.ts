@@ -1,6 +1,6 @@
 import { join } from 'node:path'
 import browserslist from 'browserslist'
-import { browserslistToTargets, transform } from 'lightningcss'
+import { browserslistToTargets, bundle } from 'lightningcss'
 import type { CustomAtRules, TransformOptions } from 'lightningcss'
 
 export type LightningcssPluginOptions<C extends CustomAtRules> = Omit<TransformOptions<C>, 'filename' | 'code'> & {
@@ -56,13 +56,9 @@ export default function lightningcssPlugin<C extends CustomAtRules>(options: Lig
       const escape = (string: string) => quote(string).slice(1, -1)
 
       if (defaultOptions.cssModules) {
-        onLoad({ filter: /\.module\.css$/ }, async ({ path }) => {
-          const file = Bun.file(path)
-          const rawCssBuffer = await file.arrayBuffer()
-
-          const { code, exports = {} } = transform({
+        onLoad({ filter: /\.module\.css$/ }, ({ path }) => {
+          const { code, exports = {} } = bundle({
             filename: path,
-            code: rawCssBuffer as unknown as Buffer,
             ...defaultOptions,
             targets,
             ...lightningOpts,
@@ -123,13 +119,9 @@ export default function lightningcssPlugin<C extends CustomAtRules>(options: Lig
         })
       }
 
-      onLoad({ filter: /^.*\.css(?!\.module\.css)$/ }, async ({ path }) => {
-        const file = Bun.file(path)
-        const rawCssBuffer = await file.arrayBuffer()
-
-        const { code } = transform({
+      onLoad({ filter: /^.*\.css(?!\.module\.css)$/ }, ({ path }) => {
+        const { code } = bundle({
           filename: path,
-          code: rawCssBuffer as unknown as Buffer,
           ...defaultOptions,
           targets,
           ...lightningOpts,

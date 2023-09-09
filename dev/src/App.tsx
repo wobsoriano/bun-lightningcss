@@ -4,7 +4,7 @@ function App() {
   return (
     <div className={styles.app} role="main">
       <article className={styles.appArticle}>
-        <img src={'/bunlogo.svg'} className={styles.appLogo} alt="logo" />
+        <img src={'/bunlogo.svg'} className="appLogo" alt="logo" />
         <div style={{ height: '30px' }}></div>
         <h3>Welcome to Bun!</h3>
         <div style={{ height: '10px' }}></div>
